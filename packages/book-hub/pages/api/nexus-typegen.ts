@@ -3,16 +3,14 @@
  * Do not make changes to this file directly
  */
 
-import { core } from 'nexus';
+
+import { core } from "nexus"
 declare global {
   interface NexusGenCustomInputMethods<TypeName extends string> {
     /**
      * A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
      */
-    date<FieldName extends string>(
-      fieldName: FieldName,
-      opts?: core.CommonInputFieldConfig<TypeName, FieldName>,
-    ): void; // "Date";
+    date<FieldName extends string>(fieldName: FieldName, opts?: core.CommonInputFieldConfig<TypeName, FieldName>): void // "Date";
   }
 }
 declare global {
@@ -20,64 +18,59 @@ declare global {
     /**
      * A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
      */
-    date<FieldName extends string>(
-      fieldName: FieldName,
-      ...opts: core.ScalarOutSpread<TypeName, FieldName>
-    ): void; // "Date";
+    date<FieldName extends string>(fieldName: FieldName, ...opts: core.ScalarOutSpread<TypeName, FieldName>): void // "Date";
   }
 }
+
 
 declare global {
   interface NexusGen extends NexusGenTypes {}
 }
 
-export interface NexusGenInputs {}
+export interface NexusGenInputs {
+}
 
-export interface NexusGenEnums {}
+export interface NexusGenEnums {
+}
 
 export interface NexusGenScalars {
-  String: string;
-  Int: number;
-  Float: number;
-  Boolean: boolean;
-  ID: string;
-  Date: any;
+  String: string
+  Int: number
+  Float: number
+  Boolean: boolean
+  ID: string
+  Date: any
 }
 
 export interface NexusGenObjects {
-  Author: {
-    // root type
+  Author: { // root type
     bio?: string | null; // String
     fullName: string; // String!
     id: number; // Int!
     imageUrl?: string | null; // String
-  };
-  Book: {
-    // root type
+  }
+  Book: { // root type
     id: number; // Int!
     publishedIn: string; // String!
-  };
-  Edition: {
-    // root type
+  }
+  Edition: { // root type
     cover?: string | null; // String
     description?: string | null; // String
     id: number; // Int!
     lang?: string | null; // String
     publishedIn?: string | null; // String
     title: string; // String!
-  };
+  }
   Mutation: {};
   Query: {};
-  Review: {
-    // root type
+  Review: { // root type
     body: string; // String!
     createdAt: string; // String!
     id: number; // Int!
     lang?: string | null; // String
     updatedAt: string; // String!
-  };
-  User: {
-    // root type
+  }
+  User: { // root type
     createdAt: string; // String!
     email?: string | null; // String
     emailVerified?: string | null; // String
@@ -85,35 +78,34 @@ export interface NexusGenObjects {
     image?: string | null; // String
     name?: string | null; // String
     updatedAt: string; // String!
-  };
+  }
 }
 
-export interface NexusGenInterfaces {}
+export interface NexusGenInterfaces {
+}
 
-export interface NexusGenUnions {}
+export interface NexusGenUnions {
+}
 
-export type NexusGenRootTypes = NexusGenObjects;
+export type NexusGenRootTypes = NexusGenObjects
 
-export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars;
+export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
-  Author: {
-    // field return type
+  Author: { // field return type
     bio: string | null; // String
     books: NexusGenRootTypes['Book'][]; // [Book!]!
     fullName: string; // String!
     id: number; // Int!
     imageUrl: string | null; // String
-  };
-  Book: {
-    // field return type
+  }
+  Book: { // field return type
     authors: NexusGenRootTypes['Author'][]; // [Author!]!
     editions: NexusGenRootTypes['Edition'][]; // [Edition!]!
     id: number; // Int!
     publishedIn: string; // String!
-  };
-  Edition: {
-    // field return type
+  }
+  Edition: { // field return type
     book: NexusGenRootTypes['Book']; // Book!
     cover: string | null; // String
     description: string | null; // String
@@ -122,13 +114,11 @@ export interface NexusGenFieldTypes {
     publishedIn: string | null; // String
     reviews: NexusGenRootTypes['Review'][]; // [Review!]!
     title: string; // String!
-  };
-  Mutation: {
-    // field return type
+  }
+  Mutation: { // field return type
     updateProfile: NexusGenRootTypes['User']; // User!
-  };
-  Query: {
-    // field return type
+  }
+  Query: { // field return type
     author: NexusGenRootTypes['Author'] | null; // Author
     book: NexusGenRootTypes['Book'] | null; // Book
     books: NexusGenRootTypes['Book'][]; // [Book!]!
@@ -137,9 +127,8 @@ export interface NexusGenFieldTypes {
     review: NexusGenRootTypes['Review'] | null; // Review
     reviews: NexusGenRootTypes['Review'][]; // [Review!]!
     user: NexusGenRootTypes['User'] | null; // User
-  };
-  Review: {
-    // field return type
+  }
+  Review: { // field return type
     body: string; // String!
     createdAt: string; // String!
     creator: NexusGenRootTypes['User']; // User!
@@ -147,9 +136,8 @@ export interface NexusGenFieldTypes {
     id: number; // Int!
     lang: string | null; // String
     updatedAt: string; // String!
-  };
-  User: {
-    // field return type
+  }
+  User: { // field return type
     createdAt: string; // String!
     email: string | null; // String
     emailVerified: string | null; // String
@@ -157,123 +145,109 @@ export interface NexusGenFieldTypes {
     image: string | null; // String
     name: string | null; // String
     updatedAt: string; // String!
-  };
+  }
 }
 
 export interface NexusGenFieldTypeNames {
-  Author: {
-    // field return type name
-    bio: 'String';
-    books: 'Book';
-    fullName: 'String';
-    id: 'Int';
-    imageUrl: 'String';
-  };
-  Book: {
-    // field return type name
-    authors: 'Author';
-    editions: 'Edition';
-    id: 'Int';
-    publishedIn: 'String';
-  };
-  Edition: {
-    // field return type name
-    book: 'Book';
-    cover: 'String';
-    description: 'String';
-    id: 'Int';
-    lang: 'String';
-    publishedIn: 'String';
-    reviews: 'Review';
-    title: 'String';
-  };
-  Mutation: {
-    // field return type name
-    updateProfile: 'User';
-  };
-  Query: {
-    // field return type name
-    author: 'Author';
-    book: 'Book';
-    books: 'Book';
-    edition: 'Edition';
-    profile: 'User';
-    review: 'Review';
-    reviews: 'Review';
-    user: 'User';
-  };
-  Review: {
-    // field return type name
-    body: 'String';
-    createdAt: 'String';
-    creator: 'User';
-    edition: 'Edition';
-    id: 'Int';
-    lang: 'String';
-    updatedAt: 'String';
-  };
-  User: {
-    // field return type name
-    createdAt: 'String';
-    email: 'String';
-    emailVerified: 'String';
-    id: 'String';
-    image: 'String';
-    name: 'String';
-    updatedAt: 'String';
-  };
+  Author: { // field return type name
+    bio: 'String'
+    books: 'Book'
+    fullName: 'String'
+    id: 'Int'
+    imageUrl: 'String'
+  }
+  Book: { // field return type name
+    authors: 'Author'
+    editions: 'Edition'
+    id: 'Int'
+    publishedIn: 'String'
+  }
+  Edition: { // field return type name
+    book: 'Book'
+    cover: 'String'
+    description: 'String'
+    id: 'Int'
+    lang: 'String'
+    publishedIn: 'String'
+    reviews: 'Review'
+    title: 'String'
+  }
+  Mutation: { // field return type name
+    updateProfile: 'User'
+  }
+  Query: { // field return type name
+    author: 'Author'
+    book: 'Book'
+    books: 'Book'
+    edition: 'Edition'
+    profile: 'User'
+    review: 'Review'
+    reviews: 'Review'
+    user: 'User'
+  }
+  Review: { // field return type name
+    body: 'String'
+    createdAt: 'String'
+    creator: 'User'
+    edition: 'Edition'
+    id: 'Int'
+    lang: 'String'
+    updatedAt: 'String'
+  }
+  User: { // field return type name
+    createdAt: 'String'
+    email: 'String'
+    emailVerified: 'String'
+    id: 'String'
+    image: 'String'
+    name: 'String'
+    updatedAt: 'String'
+  }
 }
 
 export interface NexusGenArgTypes {
   Mutation: {
-    updateProfile: {
-      // args
+    updateProfile: { // args
       name?: string | null; // String
-    };
-  };
+    }
+  }
   Query: {
-    author: {
-      // args
+    author: { // args
       id?: string | null; // ID
-    };
-    book: {
-      // args
+    }
+    book: { // args
       id?: string | null; // ID
-    };
-    edition: {
-      // args
+    }
+    edition: { // args
       id?: string | null; // ID
-    };
-    review: {
-      // args
+    }
+    review: { // args
       id?: string | null; // ID
-    };
-    reviews: {
-      // args
+    }
+    reviews: { // args
       bookId?: string | null; // ID
       editionId?: string | null; // ID
       lang?: string | null; // String
-    };
-    user: {
-      // args
+    }
+    user: { // args
       id?: string | null; // ID
-    };
-  };
+    }
+  }
   Review: {
-    creator: {
-      // args
+    creator: { // args
       id?: string | null; // ID
-    };
-    edition: {
-      // args
+    }
+    edition: { // args
       id?: string | null; // ID
-    };
-  };
+    }
+  }
 }
 
-export interface NexusGenAbstractTypeMembers {}
+export interface NexusGenAbstractTypeMembers {
+}
 
-export interface NexusGenTypeInterfaces {}
+export interface NexusGenTypeInterfaces {
+}
 
 export type NexusGenObjectNames = keyof NexusGenObjects;
 
@@ -293,11 +267,11 @@ export type NexusGenAbstractsUsingStrategyResolveType = never;
 
 export type NexusGenFeaturesConfig = {
   abstractTypeStrategies: {
-    isTypeOf: false;
-    resolveType: true;
-    __typename: false;
-  };
-};
+    isTypeOf: false
+    resolveType: true
+    __typename: false
+  }
+}
 
 export interface NexusGenTypes {
   context: any;
@@ -315,17 +289,9 @@ export interface NexusGenTypes {
   interfaceNames: NexusGenInterfaceNames;
   scalarNames: NexusGenScalarNames;
   unionNames: NexusGenUnionNames;
-  allInputTypes:
-    | NexusGenTypes['inputNames']
-    | NexusGenTypes['enumNames']
-    | NexusGenTypes['scalarNames'];
-  allOutputTypes:
-    | NexusGenTypes['objectNames']
-    | NexusGenTypes['enumNames']
-    | NexusGenTypes['unionNames']
-    | NexusGenTypes['interfaceNames']
-    | NexusGenTypes['scalarNames'];
-  allNamedTypes: NexusGenTypes['allInputTypes'] | NexusGenTypes['allOutputTypes'];
+  allInputTypes: NexusGenTypes['inputNames'] | NexusGenTypes['enumNames'] | NexusGenTypes['scalarNames'];
+  allOutputTypes: NexusGenTypes['objectNames'] | NexusGenTypes['enumNames'] | NexusGenTypes['unionNames'] | NexusGenTypes['interfaceNames'] | NexusGenTypes['scalarNames'];
+  allNamedTypes: NexusGenTypes['allInputTypes'] | NexusGenTypes['allOutputTypes']
   abstractTypes: NexusGenTypes['interfaceNames'] | NexusGenTypes['unionNames'];
   abstractTypeMembers: NexusGenAbstractTypeMembers;
   objectsUsingAbstractStrategyIsTypeOf: NexusGenObjectsUsingAbstractStrategyIsTypeOf;
@@ -333,10 +299,16 @@ export interface NexusGenTypes {
   features: NexusGenFeaturesConfig;
 }
 
+
 declare global {
-  interface NexusGenPluginTypeConfig<TypeName extends string> {}
-  interface NexusGenPluginFieldConfig<TypeName extends string, FieldName extends string> {}
-  interface NexusGenPluginInputFieldConfig<TypeName extends string, FieldName extends string> {}
-  interface NexusGenPluginSchemaConfig {}
-  interface NexusGenPluginArgConfig {}
+  interface NexusGenPluginTypeConfig<TypeName extends string> {
+  }
+  interface NexusGenPluginFieldConfig<TypeName extends string, FieldName extends string> {
+  }
+  interface NexusGenPluginInputFieldConfig<TypeName extends string, FieldName extends string> {
+  }
+  interface NexusGenPluginSchemaConfig {
+  }
+  interface NexusGenPluginArgConfig {
+  }
 }

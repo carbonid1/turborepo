@@ -16,3 +16,6 @@ tsconfig.tsbuildinfo
 
 # deployment
 .vercel
+
+# logs
+.pnpm-debug.log

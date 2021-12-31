@@ -1,9 +1,11 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
   env: {
-    jest: true,
+    node: true,
+    browser: true,
   },
   extends: [
+    'next/core-web-vitals',
+    'next',
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
@@ -11,12 +13,34 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
-    'next/core-web-vitals',
-    'next',
     'prettier',
   ],
-  plugins: ['react', '@typescript-eslint'],
-  ignorePatterns: ['pages/api/nexus-typegen.ts', 'lib/generated/**/*'],
+  plugins: ['react', '@typescript-eslint', 'import'],
+  ignorePatterns: ['node_modules', '.next', '.turbo'],
+  settings: {
+    next: {
+      rootDir: [
+        'packages/book-hub/',
+        'packages/eslint-config/',
+        'packages/tsconfig/',
+        'packages/ui/',
+        'packages/ui-transpiled/',
+      ],
+    },
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        project: ['tsconfig.json', 'package/tsconfig.json'],
+      },
+      typescript: {
+        alwaysTryTypes: true,
+        project: ['tsconfig.json', 'package/tsconfig.json'],
+      },
+    },
+  },
   rules: {
     'jsx-quotes': 'warn',
     'no-console': [

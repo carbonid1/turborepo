@@ -6,7 +6,7 @@
     "studio": "npx prisma studio",
     "migrate_db": "npx prisma migrate dev --preview-feature",
     "reset_db": "npx prisma migrate reset --force --preview-feature",
-    "nexus_gen": "pnpm -s run generate:prisma && pnpm -s run generate:nexus",
+    "nexus_gen": "yarn -s run generate:prisma && yarn -s run generate:nexus",
     "gql_gen": "graphql-codegen --config codegen.yml",
     "gql_gen:watch": "graphql-codegen --config codegen.yml --watch",
     "storybook": "start-storybook -s ./public -p 6006",
@@ -39,7 +39,7 @@
     "graphql": "15.5.1",
     "graphql-iso-date": "3.6.1",
     "iso-639-1": "2.1.10",
-    "next": "12.0.1",
+    "next": "12.0.7",
     "next-auth": "4.0.5",
     "next-pwa": "5.4.0",
     "nexus": "1.0.0",
@@ -55,14 +55,14 @@
     "zustand": "3.6.3"
   },
   "devDependencies": {
-    "@babel/core": "7.16.0",
-    "@babel/preset-typescript": "7.16.0",
+    "@babel/core": "7.16.7",
+    "@babel/preset-typescript": "7.16.7",
     "@graphql-codegen/cli": "2.2.2",
     "@graphql-codegen/named-operations-object": "2.2.0",
     "@graphql-codegen/typescript": "2.3.0",
     "@graphql-codegen/typescript-operations": "2.2.0",
     "@graphql-codegen/typescript-react-apollo": "3.2.0",
-    "@next/bundle-analyzer": "12.0.2",
+    "@next/bundle-analyzer": "12.0.7",
     "@prisma/client": "3.7.0",
     "@storybook/addon-a11y": "6.3.12",
     "@storybook/addon-essentials": "6.3.12",
@@ -83,14 +83,13 @@
     "msw": "0.35.0",
     "msw-storybook-addon": "1.4.1",
     "postcss": "8.3.11",
-    "prettier": "2.4.1",
     "prisma": "3.6.0",
     "sass": "1.43.4",
     "storybook-css-modules-preset": "1.1.1",
     "tailwindcss": "3.0.1",
-    "typescript": "4.4.4",
-    "eslint-config": "workspace:*",
-    "tsconfig": "workspace:*"
+    "typescript": "4.5.4",
+    "eslint-config": "*",
+    "tsconfig": "*"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

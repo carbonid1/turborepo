@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "ui-transpiled",
   "version": "0.0.0",
   "devDependencies": {
     "@types/react": "^17.0.38",

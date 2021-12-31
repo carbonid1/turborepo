@@ -1,1 +1,1 @@
-export { default, getServerSideProps } from 'lib/modules/AuthorPage';
+export { default, getServerSideProps } from 'lib/modules/AuthorPage'

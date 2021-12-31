@@ -1,12 +1,12 @@
 const withOpacity = variableName => {
   return ({ opacityValue }) => {
     if (opacityValue) {
-      return `rgba(var(${variableName}), ${opacityValue})`;
+      return `rgba(var(${variableName}), ${opacityValue})`
     } else {
-      return `rgb(var(${variableName}))`;
+      return `rgb(var(${variableName}))`
     }
-  };
-};
+  }
+}
 
 module.exports = {
   content: ['./{pages,docs,lib}/**/*.{js,ts,jsx,tsx,mdx}'], // list all the folders
@@ -83,4 +83,4 @@ module.exports = {
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],
-};
+}

@@ -1,24 +1,24 @@
-import type { GetServerSideProps, NextPage } from 'next';
-import { getSession } from 'next-auth/react';
-import { useForm } from 'react-hook-form';
-import { CustomHead } from 'lib/components/CustomHead';
-import { ROUTE } from 'lib/consts/routes';
-import { useUpdateProfile } from 'lib/hooks/updateProfile';
-import useProfile from 'lib/hooks/useProfile';
-import { TextField } from 'lib/components/@controls/TextField';
-import { Button } from 'lib/components/@controls/Button';
+import type { GetServerSideProps, NextPage } from 'next'
+import { getSession } from 'next-auth/react'
+import { useForm } from 'react-hook-form'
+import { CustomHead } from 'lib/components/CustomHead'
+import { ROUTE } from 'lib/consts/routes'
+import { useUpdateProfile } from 'lib/hooks/updateProfile'
+import useProfile from 'lib/hooks/useProfile'
+import { TextField } from 'lib/components/@controls/TextField'
+import { Button } from 'lib/components/@controls/Button'
 
 interface FormData {
-  name: string | null;
+  name: string | null
 }
 
 const SettingsPage: NextPage = () => {
-  const { profile } = useProfile();
-  const { updateProfile, loading } = useUpdateProfile();
-  const { register, handleSubmit } = useForm<FormData>({ defaultValues: { name: profile?.name } });
+  const { profile } = useProfile()
+  const { updateProfile, loading } = useUpdateProfile()
+  const { register, handleSubmit } = useForm<FormData>({ defaultValues: { name: profile?.name } })
   const onSubmit = handleSubmit(variables => {
-    updateProfile({ variables });
-  });
+    updateProfile({ variables })
+  })
 
   return (
     <>
@@ -39,11 +39,11 @@ const SettingsPage: NextPage = () => {
         </form>
       </div>
     </>
-  );
-};
+  )
+}
 
 export const getServerSideProps: GetServerSideProps = async context => {
-  const session = await getSession(context);
+  const session = await getSession(context)
 
   if (!session) {
     return {
@@ -51,12 +51,12 @@ export const getServerSideProps: GetServerSideProps = async context => {
       redirect: {
         destination: `/${ROUTE.signIn}`,
       },
-    };
+    }
   }
 
   return {
     props: {},
-  };
-};
+  }
+}
 
-export default SettingsPage;
+export default SettingsPage

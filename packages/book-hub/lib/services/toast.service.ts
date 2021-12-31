@@ -1,5 +1,5 @@
-import { toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast'
 
-const toastService = toast;
+const toastService = toast
 
-export default toastService;
+export default toastService

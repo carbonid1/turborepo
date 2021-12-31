@@ -1,19 +1,19 @@
-import 'styles/globals.css';
-import { useEffect } from 'react';
-import App, { AppContext, AppProps } from 'next/app';
-import Head from 'next/head';
-import { ApolloProvider } from '@apollo/client';
-import { IdProvider } from '@radix-ui/react-id';
-import { Toaster } from 'react-hot-toast';
-import { AppHeader } from 'lib/modules/AppHeader';
-import { initializeApollo, useApollo } from 'lib/apollo';
-import trackingService from 'lib/services/tracking';
-import { AppWrapper } from 'lib/components/AppWrapper';
-import { AppProgress } from 'lib/modules/AppProgress';
-import gg from 'lib/generated';
+import 'styles/globals.css'
+import { useEffect } from 'react'
+import App, { AppContext, AppProps } from 'next/app'
+import Head from 'next/head'
+import { ApolloProvider } from '@apollo/client'
+import { IdProvider } from '@radix-ui/react-id'
+import { Toaster } from 'react-hot-toast'
+import { AppHeader } from 'lib/modules/AppHeader'
+import { initializeApollo, useApollo } from 'lib/apollo'
+import trackingService from 'lib/services/tracking'
+import { AppWrapper } from 'lib/components/AppWrapper'
+import { AppProgress } from 'lib/modules/AppProgress'
+import gg from 'lib/generated'
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
-  const { initialApolloState, initialAppApolloState } = pageProps;
+  const { initialApolloState, initialAppApolloState } = pageProps
   const apolloClient = useApollo({
     ...initialAppApolloState,
     ...initialApolloState,
@@ -21,11 +21,11 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       ...initialAppApolloState.ROOT_QUERY,
       ...initialApolloState?.ROOT_QUERY,
     },
-  });
+  })
 
   useEffect(() => {
-    trackingService.init();
-  }, []);
+    trackingService.init()
+  }, [])
 
   return (
     <ApolloProvider client={apolloClient}>
@@ -45,14 +45,14 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       </IdProvider>
       <Toaster toastOptions={{ position: 'bottom-right' }} />
     </ApolloProvider>
-  );
-};
+  )
+}
 
 MyApp.getInitialProps = async (appContext: AppContext) => {
-  const appProps = await App.getInitialProps(appContext);
-  const apolloClient = initializeApollo({ context: appContext.ctx });
+  const appProps = await App.getInitialProps(appContext)
+  const apolloClient = initializeApollo({ context: appContext.ctx })
 
-  await apolloClient.query({ query: gg.ProfileHookDocument });
+  await apolloClient.query({ query: gg.ProfileHookDocument })
 
   return {
     ...appProps,
@@ -60,7 +60,7 @@ MyApp.getInitialProps = async (appContext: AppContext) => {
       ...appProps.pageProps,
       initialAppApolloState: apolloClient.cache.extract(),
     },
-  };
-};
+  }
+}
 
-export default MyApp;
+export default MyApp

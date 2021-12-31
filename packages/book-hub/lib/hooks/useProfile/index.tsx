@@ -1,11 +1,11 @@
-import gg from 'lib/generated';
+import gg from 'lib/generated'
 
 const useProfile = () => {
-  const { data } = gg.useProfileHook();
+  const { data } = gg.useProfileHook()
 
   return {
     profile: data?.profile,
-  };
-};
+  }
+}
 
-export default useProfile;
+export default useProfile

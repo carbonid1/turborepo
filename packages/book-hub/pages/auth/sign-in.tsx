@@ -1,1 +1,1 @@
-export { default, getServerSideProps } from 'lib/modules/AuthPages/SignInPage';
+export { default, getServerSideProps } from 'lib/modules/AuthPages/SignInPage'

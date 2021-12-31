@@ -1,18 +1,18 @@
-import type { GetServerSideProps, NextPage } from 'next';
-import { ClientSafeProvider, getProviders, getSession, signIn } from 'next-auth/react';
-import { GoogleIcon, GitHubIcon, TwitterIcon } from 'lib/icons';
-import { isSSR } from 'lib/utils';
-import { errors } from 'lib/consts/errors';
-import toastService from 'lib/services/toast.service';
+import type { GetServerSideProps, NextPage } from 'next'
+import { ClientSafeProvider, getProviders, getSession, signIn } from 'next-auth/react'
+import { GoogleIcon, GitHubIcon, TwitterIcon } from 'lib/icons'
+import { isSSR } from 'lib/utils'
+import { errors } from 'lib/consts/errors'
+import toastService from 'lib/services/toast.service'
 
-type TSignInProviders = 'google' | 'github' | 'twitter';
+type TSignInProviders = 'google' | 'github' | 'twitter'
 export interface SignInPageProps {
-  providers: Record<TSignInProviders, ClientSafeProvider>;
-  error: string | undefined;
+  providers: Record<TSignInProviders, ClientSafeProvider>
+  error: string | undefined
 }
 
 const SignInPage: NextPage<SignInPageProps> = ({ providers, error }) => {
-  if (error && !isSSR()) toastService.error(error, { duration: 10000 });
+  if (error && !isSSR()) toastService.error(error, { duration: 10000 })
 
   return (
     <div className="flex items-center justify-center flex-1">
@@ -40,11 +40,11 @@ const SignInPage: NextPage<SignInPageProps> = ({ providers, error }) => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const getServerSideProps: GetServerSideProps = async ctx => {
-  const session = await getSession(ctx);
+  const session = await getSession(ctx)
 
   if (session) {
     return {
@@ -52,7 +52,7 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
       redirect: {
         destination: ctx.query.callbackUrl || '/',
       },
-    };
+    }
   }
 
   return {
@@ -60,7 +60,7 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
       providers: await getProviders(),
       error: ctx.query.error === 'OAuthAccountNotLinked' ? errors.OAuthAccountNotLinked : null,
     },
-  };
-};
+  }
+}
 
-export default SignInPage;
+export default SignInPage

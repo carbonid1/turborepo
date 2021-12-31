@@ -1,17 +1,17 @@
-import type { GetServerSideProps, NextPage } from 'next';
-import NextImage from 'next/image';
-import NextLink from 'next/link';
-import slugify from 'slugify';
-import { ROUTE } from 'lib/consts/routes';
-import { ServerError } from 'lib/components/@errors/ServerError';
-import { initializeApollo } from 'lib/apollo';
-import gg from 'lib/generated';
+import type { GetServerSideProps, NextPage } from 'next'
+import NextImage from 'next/image'
+import NextLink from 'next/link'
+import slugify from 'slugify'
+import { ROUTE } from 'lib/consts/routes'
+import { ServerError } from 'lib/components/@errors/ServerError'
+import { initializeApollo } from 'lib/apollo'
+import gg from 'lib/generated'
 
 const HomePage: NextPage = () => {
-  const { data, error } = gg.useIndexPageBooks();
-  const { books = [] } = data ?? {};
+  const { data, error } = gg.useIndexPageBooks()
+  const { books = [] } = data ?? {}
 
-  if (error) return <ServerError />;
+  if (error) return <ServerError />
 
   return (
     <div
@@ -37,17 +37,17 @@ const HomePage: NextPage = () => {
         </NextLink>
       ))}
     </div>
-  );
-};
+  )
+}
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const apolloClient = initializeApollo();
-  await apolloClient.query({ query: gg.IndexPageBooksDocument });
+  const apolloClient = initializeApollo()
+  await apolloClient.query({ query: gg.IndexPageBooksDocument })
   return {
     props: {
       initialApolloState: apolloClient.cache.extract(),
     },
-  };
-};
+  }
+}
 
-export default HomePage;
+export default HomePage

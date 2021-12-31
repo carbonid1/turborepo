@@ -1,15 +1,15 @@
-import { CollectionIcon } from '@heroicons/react/solid';
-import { ReactNode, useEffect, useState } from 'react';
-import cn from 'classnames';
-import { BaseBlock, IBaseBlock } from 'lib/components/@layout/BaseBlock';
-import { Skeleton } from '../Skeleton';
+import { CollectionIcon } from '@heroicons/react/solid'
+import { ReactNode, useEffect, useState } from 'react'
+import cn from 'classnames'
+import { BaseBlock, IBaseBlock } from 'lib/components/@layout/BaseBlock'
+import { Skeleton } from '../Skeleton'
 
 export interface ILoadingContent extends Pick<IBaseBlock, 'subTitle' | 'title'> {
-  className?: string;
-  loading: boolean;
-  empty: boolean;
-  loader?: ReactNode;
-  initiallyLoaded: boolean;
+  className?: string
+  loading: boolean
+  empty: boolean
+  loader?: ReactNode
+  initiallyLoaded: boolean
 }
 
 export const LoadingContent: React.FC<ILoadingContent> = ({
@@ -22,19 +22,19 @@ export const LoadingContent: React.FC<ILoadingContent> = ({
   className,
   initiallyLoaded,
 }) => {
-  const [innerLoading, setInnerLoading] = useState(loading);
+  const [innerLoading, setInnerLoading] = useState(loading)
 
   useEffect(() => {
     if (loading) {
-      setInnerLoading(loading);
+      setInnerLoading(loading)
     } else {
       const timeoutId = setTimeout(() => {
-        setInnerLoading(loading);
-      }, 300);
+        setInnerLoading(loading)
+      }, 300)
 
-      return () => clearTimeout(timeoutId);
+      return () => clearTimeout(timeoutId)
     }
-  }, [loading]);
+  }, [loading])
 
   return (
     <div className={cn(innerLoading && 'animate-pulse', className)}>
@@ -50,5 +50,5 @@ export const LoadingContent: React.FC<ILoadingContent> = ({
         children
       )}
     </div>
-  );
-};
+  )
+}

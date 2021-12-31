@@ -1,1 +1,1 @@
-export { default, getServerSideProps } from 'lib/modules/SettingsPage';
+export { default, getServerSideProps } from 'lib/modules/SettingsPage'

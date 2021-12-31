@@ -1,11 +1,11 @@
-import { ROUTE } from 'lib/consts/routes';
-import useProfile from 'lib/hooks/useProfile';
-import { Avatar } from 'lib/components/Avatar';
+import { ROUTE } from 'lib/consts/routes'
+import useProfile from 'lib/hooks/useProfile'
+import { Avatar } from 'lib/components/Avatar'
 
 export const HeaderAvatar: React.FC = () => {
-  const { profile } = useProfile();
+  const { profile } = useProfile()
 
-  if (!profile) return null;
+  if (!profile) return null
 
   return (
     <Avatar
@@ -16,5 +16,5 @@ export const HeaderAvatar: React.FC = () => {
       fallbackImgSeed={profile.id}
       aria-label="Open your profile"
     />
-  );
-};
+  )
+}

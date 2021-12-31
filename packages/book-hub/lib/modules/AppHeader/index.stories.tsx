@@ -1,9 +1,9 @@
-import type { Story, Meta } from '@storybook/react';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import { graphql } from 'msw';
-import usersMock from 'lib/mocks/users.mock';
-import gg from 'lib/generated';
-import { AppHeader } from '.';
+import type { Story, Meta } from '@storybook/react'
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+import { graphql } from 'msw'
+import usersMock from 'lib/mocks/users.mock'
+import gg from 'lib/generated'
+import { AppHeader } from '.'
 
 export default {
   title: 'modules/AppHeader',
@@ -11,7 +11,7 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-} as Meta;
+} as Meta
 
 const mockedClient = new ApolloClient({
   uri: 'https://mocked/api',
@@ -26,28 +26,28 @@ const mockedClient = new ApolloClient({
       errorPolicy: 'all',
     },
   },
-});
+})
 
 const Template: Story = args => (
   <ApolloProvider client={mockedClient}>
     <AppHeader {...args} />
   </ApolloProvider>
-);
+)
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.parameters = {
   msw: [
     graphql.query(gg.names.Query.ProfileHook, (_, res, ctx) => {
-      return res(ctx.data({ profile: usersMock.ivan }));
+      return res(ctx.data({ profile: usersMock.ivan }))
     }),
   ],
-};
+}
 
-export const SignedOut = Template.bind({});
+export const SignedOut = Template.bind({})
 SignedOut.parameters = {
   msw: [
     graphql.query(gg.names.Query.ProfileHook, (_, res, ctx) => {
-      return res(ctx.data({ profile: null }));
+      return res(ctx.data({ profile: null }))
     }),
   ],
-};
+}

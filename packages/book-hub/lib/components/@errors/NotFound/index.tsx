@@ -1,6 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
-import { BaseBlock } from '../../@layout/BaseBlock';
+import React from 'react'
+import Image from 'next/image'
+import { BaseBlock } from '../../@layout/BaseBlock'
 
 export const NotFound: React.FC = () => {
   return (
@@ -16,5 +16,5 @@ export const NotFound: React.FC = () => {
         />
       }
     />
-  );
-};
+  )
+}

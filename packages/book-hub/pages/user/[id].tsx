@@ -1,1 +1,1 @@
-export { default, getServerSideProps } from 'lib/modules/UserPage';
+export { default, getServerSideProps } from 'lib/modules/UserPage'

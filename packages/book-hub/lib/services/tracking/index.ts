@@ -1,3 +1,3 @@
-import * as trackingService from './service';
+import * as trackingService from './service'
 
-export default trackingService;
+export default trackingService

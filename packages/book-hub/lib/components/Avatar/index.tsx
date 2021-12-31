@@ -1,16 +1,16 @@
-import NextLink, { LinkProps } from 'next/link';
-import NextImage from 'next/image';
-import * as RadixAvatar from '@radix-ui/react-avatar';
-import classNames from 'classnames';
+import NextLink, { LinkProps } from 'next/link'
+import NextImage from 'next/image'
+import * as RadixAvatar from '@radix-ui/react-avatar'
+import classNames from 'classnames'
 
-type TagProps = Omit<JSX.IntrinsicElements['a'], 'href'>;
+type TagProps = Omit<JSX.IntrinsicElements['a'], 'href'>
 export interface AvatarProps extends TagProps {
-  alt: Maybe<string>;
-  src: Maybe<string>;
-  className?: string;
-  fallbackImgSeed: string;
-  href: LinkProps['href'];
-  size?: 'md' | 'lg';
+  alt: Maybe<string>
+  src: Maybe<string>
+  className?: string
+  fallbackImgSeed: string
+  href: LinkProps['href']
+  size?: 'md' | 'lg'
 }
 
 export const Avatar: React.FC<AvatarProps> = ({
@@ -22,7 +22,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   fallbackImgSeed,
   ...props
 }) => {
-  const imgSize = size === 'lg' ? 48 : 32;
+  const imgSize = size === 'lg' ? 48 : 32
   return (
     <NextLink href={href}>
       <a
@@ -53,5 +53,5 @@ export const Avatar: React.FC<AvatarProps> = ({
         </RadixAvatar.Root>
       </a>
     </NextLink>
-  );
-};
+  )
+}

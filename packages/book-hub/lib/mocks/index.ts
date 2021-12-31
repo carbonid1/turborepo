@@ -1,8 +1,8 @@
-import authorsMock from './authors.mock';
-import booksMock from './books.mock';
-import editionsMock from './editions.mock';
-import reviewsMock from './reviews.mock';
-import usersMock from './users.mock';
+import authorsMock from './authors.mock'
+import booksMock from './books.mock'
+import editionsMock from './editions.mock'
+import reviewsMock from './reviews.mock'
+import usersMock from './users.mock'
 
 const mocks = {
   authors: authorsMock,
@@ -10,6 +10,6 @@ const mocks = {
   editions: editionsMock,
   reviews: reviewsMock,
   users: usersMock,
-};
+}
 
-export default mocks;
+export default mocks

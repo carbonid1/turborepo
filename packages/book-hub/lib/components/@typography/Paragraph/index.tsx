@@ -1,17 +1,17 @@
-import type { ReactNode } from 'react';
-import cn from 'classnames';
-import { TextLink } from 'lib/components';
-import hooks, { TParagraphEllipsis } from './hooks';
+import type { ReactNode } from 'react'
+import cn from 'classnames'
+import { TextLink } from 'lib/components'
+import hooks, { TParagraphEllipsis } from './hooks'
 
 export interface IParagraph {
-  className?: string;
-  children: ReactNode;
-  ellipsis: TParagraphEllipsis;
+  className?: string
+  children: ReactNode
+  ellipsis: TParagraphEllipsis
 }
 
 export const Paragraph: React.FC<IParagraph> = ({ className, children, ellipsis }) => {
   const { lineClampClassName, paragraphRef, expanded, isActive, onExpand } =
-    hooks.useEllipsis(ellipsis);
+    hooks.useEllipsis(ellipsis)
 
   return (
     <div className={cn('max-w-prose', className)}>
@@ -24,5 +24,5 @@ export const Paragraph: React.FC<IParagraph> = ({ className, children, ellipsis 
         </TextLink>
       )}
     </div>
-  );
-};
+  )
+}

@@ -1,22 +1,22 @@
-import { signIn, signOut } from 'next-auth/react';
-import { TextLink } from 'lib/components';
-import useProfile from 'lib/hooks/useProfile';
-import { useAppProgress } from '../AppProgress/useAppProgress';
-import { HeaderAvatar } from './HeaderAvatar';
+import { signIn, signOut } from 'next-auth/react'
+import { TextLink } from 'lib/components'
+import useProfile from 'lib/hooks/useProfile'
+import { useAppProgress } from '../AppProgress/useAppProgress'
+import { HeaderAvatar } from './HeaderAvatar'
 
 export const AppHeader: React.FC = () => {
-  const setIsAnimating = useAppProgress(state => state.setIsAnimating);
-  const { profile } = useProfile();
+  const setIsAnimating = useAppProgress(state => state.setIsAnimating)
+  const { profile } = useProfile()
 
   const handleSignOut = () => {
-    setIsAnimating(true);
-    signOut().then(() => setIsAnimating(false));
-  };
+    setIsAnimating(true)
+    signOut().then(() => setIsAnimating(false))
+  }
 
   const handleSignIn = () => {
-    setIsAnimating(true);
-    signIn().then(() => setIsAnimating(false));
-  };
+    setIsAnimating(true)
+    signIn().then(() => setIsAnimating(false))
+  }
 
   return (
     <div className="sticky top-0 flex items-center w-full bg-skin-base z-header justify-items-center">
@@ -34,5 +34,5 @@ export const AppHeader: React.FC = () => {
         </TextLink>
       </div>
     </div>
-  );
-};
+  )
+}

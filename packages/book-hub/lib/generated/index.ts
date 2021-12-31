@@ -1,3 +1,3 @@
-import * as gg from './graphql';
+import * as gg from './graphql'
 
-export default gg;
+export default gg

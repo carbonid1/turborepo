@@ -1,15 +1,15 @@
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
-import { DotsVerticalIcon } from '@heroicons/react/solid';
-import { useRouter } from 'next/router';
-import { ROUTE } from 'lib/consts/routes';
-import type gg from 'lib/generated';
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
+import { DotsVerticalIcon } from '@heroicons/react/solid'
+import { useRouter } from 'next/router'
+import { ROUTE } from 'lib/consts/routes'
+import type gg from 'lib/generated'
 
 export interface ReviewDropdownProps {
-  reviewId: gg.Review['id'];
+  reviewId: gg.Review['id']
 }
 
 export const ReviewDropdown: React.FC<ReviewDropdownProps> = ({ reviewId }) => {
-  const router = useRouter();
+  const router = useRouter()
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
@@ -34,5 +34,5 @@ export const ReviewDropdown: React.FC<ReviewDropdownProps> = ({ reviewId }) => {
         <DropdownMenu.Arrow className="fill-skin-complement" />
       </DropdownMenu.Content>
     </DropdownMenu.Root>
-  );
-};
+  )
+}

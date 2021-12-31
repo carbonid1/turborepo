@@ -1,1 +1,1 @@
-export { default, getServerSideProps } from 'lib/modules/BookPage';
+export { default, getServerSideProps } from 'lib/modules/BookPage'

@@ -75,18 +75,10 @@
     "@types/node": "16.11.6",
     "@types/react": "17.0.33",
     "@types/tailwindcss": "2.2.4",
-    "@typescript-eslint/eslint-plugin": "5.3.0",
-    "@typescript-eslint/parser": "5.3.0",
     "autoprefixer": "10.4.0",
     "babel-loader": "8.2.3",
     "bundlemon": "1.1.1",
     "chromatic": "6.0.5",
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.0",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-import": "2.24.2",
-    "eslint-plugin-react": "7.24.0",
-    "eslint-plugin-react-hooks": "4.2.0",
     "jest": "27.3.1",
     "msw": "0.35.0",
     "msw-storybook-addon": "1.4.1",
@@ -96,7 +88,8 @@
     "sass": "1.43.4",
     "storybook-css-modules-preset": "1.1.1",
     "tailwindcss": "3.0.1",
-    "typescript": "4.4.4"
+    "typescript": "4.4.4",
+    "eslint-config": "*"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

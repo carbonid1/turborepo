@@ -1,14 +1,14 @@
 {
   "title": [
-		{
-			"pattern": "^\\S+\\s+\\S+\\s+\\S+",
-			"message": "Your title must have at least three words"
-		},
-		{
-			"pattern": "^(?!\\S+ing\\s)(?!\\S+ed\\s)",
-			"message": "Use imperative mood (i.e write \"Fix\", not \"Fixed\" or \"Fixing\")"
-		}
-	],
+    {
+      "pattern": "^\\S+\\s+\\S+\\s+\\S+",
+      "message": "Your title must have at least three words"
+    },
+    {
+      "pattern": "^(?!\\S+ing\\s)(?!\\S+ed\\s)",
+      "message": "Use imperative mood (i.e write \"Fix\", not \"Fixed\" or \"Fixing\")"
+    }
+  ],
   "labels.0.name": [
     {
       "pattern": "Feature|Fix|CI|Tests|Documentation|Refactoring|Performance Improvements|Build|Chore|Ignore For Release",

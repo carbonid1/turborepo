@@ -1,7 +1,7 @@
-import { NotFound } from 'lib/components/@errors/NotFound';
+import { NotFound } from 'lib/components/@errors/NotFound'
 
 const Page404: React.FC = () => {
-  return <NotFound />;
-};
+  return <NotFound />
+}
 
-export default Page404;
+export default Page404

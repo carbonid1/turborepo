@@ -1,17 +1,17 @@
-import React, { Fragment, useMemo } from 'react';
-import { Listbox, Transition } from '@headlessui/react';
-import { CheckIcon, SelectorIcon } from '@heroicons/react/solid';
-import cn from 'classnames';
+import React, { Fragment, useMemo } from 'react'
+import { Listbox, Transition } from '@headlessui/react'
+import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
+import cn from 'classnames'
 
 interface ISelectOption<V> {
-  label: string;
-  value: V;
+  label: string
+  value: V
 }
 export interface ISelect<V> {
-  options: ISelectOption<V>[];
-  placeholder?: string;
-  value: V;
-  onChange: (value: V) => void;
+  options: ISelectOption<V>[]
+  placeholder?: string
+  value: V
+  onChange: (value: V) => void
 }
 
 export const Select = <V,>({
@@ -21,8 +21,8 @@ export const Select = <V,>({
   placeholder = 'Select an Option',
 }: ISelect<V>): JSX.Element => {
   const selectedOption = useMemo(() => {
-    return options.find(option => option.value === value);
-  }, [options, value]);
+    return options.find(option => option.value === value)
+  }, [options, value])
 
   return (
     <Listbox value={value} onChange={onChange}>
@@ -75,5 +75,5 @@ export const Select = <V,>({
         </Transition>
       </div>
     </Listbox>
-  );
-};
+  )
+}

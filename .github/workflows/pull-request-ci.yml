@@ -27,7 +27,7 @@ jobs:
       - name: Use Node.js 14
         uses: actions/setup-node@v2-beta
         with:
-          node-version: "14"
+          node-version: '14'
       - name: Restore node_modules
         id: cache-node-modules
         uses: actions/cache@v2
@@ -44,7 +44,7 @@ jobs:
       - name: Use Node.js 14
         uses: actions/setup-node@v2-beta
         with:
-          node-version: "14"
+          node-version: '14'
       - name: Restore node_modules
         id: cache-node-modules
         uses: actions/cache@v2
@@ -61,7 +61,7 @@ jobs:
       - name: Use Node.js 14
         uses: actions/setup-node@v2-beta
         with:
-          node-version: "14"
+          node-version: '14'
       - name: Restore node_modules
         id: cache-node-modules
         uses: actions/cache@v2

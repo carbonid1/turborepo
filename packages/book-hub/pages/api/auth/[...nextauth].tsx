@@ -1,10 +1,10 @@
-import NextAuth from 'next-auth';
-import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import GoogleProvider from 'next-auth/providers/google';
-import GitHubProvider from 'next-auth/providers/github';
-import TwitterProvider from 'next-auth/providers/twitter';
-import { ROUTE } from 'lib/consts/routes';
-import prisma from '../../../prisma';
+import NextAuth from 'next-auth'
+import { PrismaAdapter } from '@next-auth/prisma-adapter'
+import GoogleProvider from 'next-auth/providers/google'
+import GitHubProvider from 'next-auth/providers/github'
+import TwitterProvider from 'next-auth/providers/twitter'
+import { ROUTE } from 'lib/consts/routes'
+import prisma from '../../../prisma'
 
 export default NextAuth({
   adapter: PrismaAdapter(prisma),
@@ -32,4 +32,4 @@ export default NextAuth({
   pages: {
     signIn: `/${ROUTE.signIn}`,
   },
-});
+})

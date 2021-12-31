@@ -1,17 +1,17 @@
-import React, { MouseEventHandler } from 'react';
-import NextLink from 'next/link';
-import slugify from 'slugify';
-import cn from 'classnames';
+import React, { MouseEventHandler } from 'react'
+import NextLink from 'next/link'
+import slugify from 'slugify'
+import cn from 'classnames'
 
-type ReactAnchor = JSX.IntrinsicElements['button'];
-type Color = 'base' | 'text';
+type ReactAnchor = JSX.IntrinsicElements['button']
+type Color = 'base' | 'text'
 export interface TextLinkProps {
-  className?: ReactAnchor['className'];
-  style?: ReactAnchor['style'];
-  onClick?: MouseEventHandler;
-  path?: string;
-  slug?: string;
-  color?: Color;
+  className?: ReactAnchor['className']
+  style?: ReactAnchor['style']
+  onClick?: MouseEventHandler
+  path?: string
+  slug?: string
+  color?: Color
 }
 
 const TextLink: React.FC<TextLinkProps> = ({
@@ -36,9 +36,9 @@ const TextLink: React.FC<TextLinkProps> = ({
       >
         {children}
       </button>
-    );
+    )
   } else {
-    const href = slug ? `${path}.${slugify(slug, { lower: false })}` : path;
+    const href = slug ? `${path}.${slugify(slug, { lower: false })}` : path
 
     return (
       <NextLink href={href}>
@@ -56,8 +56,8 @@ const TextLink: React.FC<TextLinkProps> = ({
           {children}
         </a>
       </NextLink>
-    );
+    )
   }
-};
+}
 
-export default TextLink;
+export default TextLink

@@ -1,11 +1,11 @@
-import getTime from 'date-fns/getTime';
-import type gg from 'lib/generated';
-import usersMock from './users.mock';
-import editionsMock from './editions.mock';
+import getTime from 'date-fns/getTime'
+import type gg from 'lib/generated'
+import usersMock from './users.mock'
+import editionsMock from './editions.mock'
 
-type TReviews = 'rangeEng1' | 'rangeRu1' | 'rangeRu2';
-type IInitialMock = Omit<gg.Review, 'id'>;
-type TReviewsMock = Record<TReviews, gg.Review>;
+type TReviews = 'rangeEng1' | 'rangeRu1' | 'rangeRu2'
+type IInitialMock = Omit<gg.Review, 'id'>
+type TReviewsMock = Record<TReviews, gg.Review>
 
 const initialMock: Record<TReviews, IInitialMock> = {
   rangeEng1: {
@@ -32,22 +32,22 @@ const initialMock: Record<TReviews, IInitialMock> = {
     edition: editionsMock.rangeRu,
     body: "Do I think it's a five-star book? It's very hard for me to say, as I wrote the thing. By the time I'm done working on a book, I have such a strong insider view of the project that it's difficult to be objective. I will say this: I worked extremely hard on it, and as a writer, researcher, and reader, I found it to be much more interesting than my first book. Most readers enjoyed that first book--at least according to Goodreads ratings--so I hope most readers will (as I have) enjoy this one even more.",
   },
-};
+}
 
-let count = 0;
+let count = 0
 const fillMock = (mock: IInitialMock): gg.Review => {
-  count++;
+  count++
   return {
     ...mock,
     id: count,
     createdAt: getTime(new Date(mock.createdAt)).toString(),
-  };
-};
+  }
+}
 
 const reviewsMock: TReviewsMock = {
   rangeEng1: fillMock(initialMock.rangeEng1),
   rangeRu1: fillMock(initialMock.rangeRu1),
   rangeRu2: fillMock(initialMock.rangeRu2),
-};
+}
 
-export default reviewsMock;
+export default reviewsMock

@@ -33,7 +33,7 @@ const GoogleIcon: React.FC<JSX.IntrinsicElements['svg']> = props => {
         fill="#EA4335"
       />
     </svg>
-  );
-};
+  )
+}
 
-export default GoogleIcon;
+export default GoogleIcon

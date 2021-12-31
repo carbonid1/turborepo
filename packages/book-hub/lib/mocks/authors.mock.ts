@@ -1,7 +1,7 @@
-import type gg from 'lib/generated';
+import type gg from 'lib/generated'
 
-type TAuthors = 'EpsteinD' | 'MartinG' | 'PratchettT' | 'BaxterS';
-type IInitialMock = Omit<gg.Author, 'books' | 'id'>;
+type TAuthors = 'EpsteinD' | 'MartinG' | 'PratchettT' | 'BaxterS'
+type IInitialMock = Omit<gg.Author, 'books' | 'id'>
 
 const initialMock: Record<TAuthors, IInitialMock> = {
   EpsteinD: {
@@ -26,19 +26,19 @@ const initialMock: Record<TAuthors, IInitialMock> = {
     imageUrl:
       'https://res.cloudinary.com/book-hub/image/upload/v1623757228/authors/Issue01_Baxter_200x300_rxdztr.jpg',
   },
-};
+}
 
-let count = 0;
+let count = 0
 const fillMock = (mock: IInitialMock): gg.Author => {
-  count++;
-  return { ...mock, books: [], id: count };
-};
+  count++
+  return { ...mock, books: [], id: count }
+}
 
 const authorsMock: Record<TAuthors, gg.Author> = {
   EpsteinD: fillMock(initialMock.EpsteinD),
   MartinG: fillMock(initialMock.MartinG),
   PratchettT: fillMock(initialMock.PratchettT),
   BaxterS: fillMock(initialMock.BaxterS),
-};
+}
 
-export default authorsMock;
+export default authorsMock

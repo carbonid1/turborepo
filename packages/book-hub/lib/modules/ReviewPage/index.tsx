@@ -1,27 +1,27 @@
-import type { GetServerSideProps, NextPage } from 'next';
-import NextImage from 'next/image';
-import { CustomHead } from 'lib/components/CustomHead';
-import { initializeApollo } from 'lib/apollo';
-import { ServerError } from 'lib/components/@errors/ServerError';
-import { NotFound } from 'lib/components/@errors/NotFound';
-import gg from 'lib/generated';
-import { Avatar } from 'lib/components/Avatar';
-import { ByAuthors } from 'lib/components/Authors/ByAuthors';
-import { ROUTE } from 'lib/consts/routes';
+import type { GetServerSideProps, NextPage } from 'next'
+import NextImage from 'next/image'
+import { CustomHead } from 'lib/components/CustomHead'
+import { initializeApollo } from 'lib/apollo'
+import { ServerError } from 'lib/components/@errors/ServerError'
+import { NotFound } from 'lib/components/@errors/NotFound'
+import gg from 'lib/generated'
+import { Avatar } from 'lib/components/Avatar'
+import { ByAuthors } from 'lib/components/Authors/ByAuthors'
+import { ROUTE } from 'lib/consts/routes'
 
 interface IReview {
-  id: string;
+  id: string
 }
 
 const Review: NextPage<IReview> = ({ id }) => {
-  const { data, error } = gg.useReviewPageReview({ variables: { id } });
-  const { review } = data ?? {};
+  const { data, error } = gg.useReviewPageReview({ variables: { id } })
+  const { review } = data ?? {}
 
-  if (error) return <ServerError />;
-  if (!review) return <NotFound />;
+  if (error) return <ServerError />
+  if (!review) return <NotFound />
 
-  const { body, edition, creator } = review;
-  const { title } = edition;
+  const { body, edition, creator } = review
+  const { title } = edition
 
   return (
     <>
@@ -51,24 +51,24 @@ const Review: NextPage<IReview> = ({ id }) => {
         <div className="col-span-2 sm:col-auto">{body}</div>
       </div>
     </>
-  );
-};
+  )
+}
 
 export const getServerSideProps: GetServerSideProps = async ctx => {
-  const id = ctx.query.id as string;
+  const id = ctx.query.id as string
 
-  const apolloClient = initializeApollo();
+  const apolloClient = initializeApollo()
   await apolloClient.query({
     query: gg.ReviewPageReviewDocument,
     variables: { id },
-  });
+  })
 
   return {
     props: {
       id,
       initialApolloState: apolloClient.cache.extract(),
     },
-  };
-};
+  }
+}
 
-export default Review;
+export default Review

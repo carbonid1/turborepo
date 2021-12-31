@@ -1,9 +1,9 @@
-import getTime from 'date-fns/getTime';
-import type gg from 'lib/generated';
-import booksMock from './books.mock';
+import getTime from 'date-fns/getTime'
+import type gg from 'lib/generated'
+import booksMock from './books.mock'
 
-type TEditions = 'rangeEng' | 'rangeRu' | 'goT' | 'LongMars' | 'ArabianN';
-type TEditionsMock = Record<TEditions, gg.Edition>;
+type TEditions = 'rangeEng' | 'rangeRu' | 'goT' | 'LongMars' | 'ArabianN'
+type TEditionsMock = Record<TEditions, gg.Edition>
 
 const editionsMock: TEditionsMock = {
   rangeEng: {
@@ -66,6 +66,6 @@ const editionsMock: TEditionsMock = {
     book: booksMock.ArabianN,
     reviews: [],
   },
-};
+}
 
-export default editionsMock;
+export default editionsMock

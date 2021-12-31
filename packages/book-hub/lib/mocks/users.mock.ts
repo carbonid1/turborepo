@@ -1,6 +1,6 @@
-import type gg from 'lib/generated';
+import type gg from 'lib/generated'
 
-type UserName = 'ivan' | 'john';
+type UserName = 'ivan' | 'john'
 
 const usersMock: Record<UserName, gg.User> = {
   ivan: {
@@ -19,6 +19,6 @@ const usersMock: Record<UserName, gg.User> = {
     updatedAt: '',
     image: null,
   },
-};
+}
 
-export default usersMock;
+export default usersMock

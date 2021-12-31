@@ -1,9 +1,9 @@
-import cn from 'classnames';
-import * as Switch from '@radix-ui/react-switch';
-import type { SwitchProps } from '@radix-ui/react-switch';
+import cn from 'classnames'
+import * as Switch from '@radix-ui/react-switch'
+import type { SwitchProps } from '@radix-ui/react-switch'
 
 export interface IToggle extends SwitchProps {
-  label?: string;
+  label?: string
 }
 
 export const Toggle: React.FC<IToggle> = ({ label, className, checked, ...props }) => {
@@ -29,5 +29,5 @@ export const Toggle: React.FC<IToggle> = ({ label, className, checked, ...props 
         />
       </Switch.Root>
     </div>
-  );
-};
+  )
+}

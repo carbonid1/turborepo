@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import type { Story, Meta } from '@storybook/react';
-import { Select, ISelect } from '.';
+import { useState } from 'react'
+import type { Story, Meta } from '@storybook/react'
+import { Select, ISelect } from '.'
 
 export default {
   title: '@controls/Select',
@@ -12,12 +12,12 @@ export default {
       </div>
     ),
   ],
-} as Meta;
+} as Meta
 
 const Template: Story<ISelect<string | undefined>> = props => {
-  const [value, onChange] = useState<string | undefined>();
-  return <Select {...props} value={value} onChange={onChange} />;
-};
+  const [value, onChange] = useState<string | undefined>()
+  return <Select {...props} value={value} onChange={onChange} />
+}
 
 const people = [
   { name: 'Wade Cooper' },
@@ -26,10 +26,10 @@ const people = [
   { name: 'Tom Cook' },
   { name: 'Tanya Fox' },
   { name: 'Hellen Schmidt' },
-];
+]
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   options: people.map(({ name }) => ({ value: name, label: name })),
   placeholder: 'Select Someone',
-};
+}

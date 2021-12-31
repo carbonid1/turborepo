@@ -1,14 +1,14 @@
-import * as RadixProgress from '@radix-ui/react-progress';
-import { useNProgress } from '@tanem/react-nprogress';
-import cn from 'classnames';
-import { useAppProgress } from './useAppProgress';
+import * as RadixProgress from '@radix-ui/react-progress'
+import { useNProgress } from '@tanem/react-nprogress'
+import cn from 'classnames'
+import { useAppProgress } from './useAppProgress'
 
 export const Progress: React.FC = () => {
-  const isAnimating = useAppProgress(state => state.isAnimating);
+  const isAnimating = useAppProgress(state => state.isAnimating)
   const { animationDuration, isFinished, progress } = useNProgress({
     isAnimating,
-  });
-  const progressInPercentage = progress * 100;
+  })
+  const progressInPercentage = progress * 100
 
   return (
     <RadixProgress.Root value={progressInPercentage} className="sticky top-0 w-full z-progress">
@@ -24,5 +24,5 @@ export const Progress: React.FC = () => {
         }}
       />
     </RadixProgress.Root>
-  );
-};
+  )
+}

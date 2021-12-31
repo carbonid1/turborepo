@@ -1,1 +1,1 @@
-export * from './LoadingContent';
+export * from './LoadingContent'

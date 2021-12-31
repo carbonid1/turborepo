@@ -1,7 +1,7 @@
-import type { Story, Meta } from '@storybook/react';
-import { AppWrapper } from 'lib/components/AppWrapper';
-import { SignedOut } from '../../AppHeader/index.stories';
-import SignInPage, { SignInPageProps } from '.';
+import type { Story, Meta } from '@storybook/react'
+import { AppWrapper } from 'lib/components/AppWrapper'
+import { SignedOut } from '../../AppHeader/index.stories'
+import SignInPage, { SignInPageProps } from '.'
 
 export default {
   title: 'modules/SignInPage',
@@ -10,7 +10,7 @@ export default {
     chromatic: { viewports: [320, 414, 1200] },
     layout: 'fullscreen',
   },
-} as Meta;
+} as Meta
 
 const Template: Story<SignInPageProps> = props => (
   <div
@@ -25,9 +25,9 @@ const Template: Story<SignInPageProps> = props => (
       <SignInPage {...props} />
     </AppWrapper>
   </div>
-);
+)
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   providers: {
     google: {
@@ -52,7 +52,7 @@ Default.args = {
       type: 'oauth',
     },
   },
-};
+}
 Default.parameters = {
   ...SignedOut.parameters,
-};
+}

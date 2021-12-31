@@ -1,10 +1,10 @@
-import create from 'zustand';
+import create from 'zustand'
 
 interface AppProgressState {
-  key: number;
-  isAnimating: boolean;
-  updateKey: () => void;
-  setIsAnimating: (isAnimating: boolean) => void;
+  key: number
+  isAnimating: boolean
+  updateKey: () => void
+  setIsAnimating: (isAnimating: boolean) => void
 }
 
 export const useAppProgress = create<AppProgressState>(set => ({
@@ -12,4 +12,4 @@ export const useAppProgress = create<AppProgressState>(set => ({
   isAnimating: false,
   updateKey: () => set(prev => ({ key: prev.key ^ 1 })),
   setIsAnimating: isAnimating => set(() => ({ isAnimating })),
-}));
+}))

@@ -1,28 +1,28 @@
-import { useState } from 'react';
-import { formatDate } from 'lib/utils';
-import { Select, ISelect } from 'lib/components/@controls/Select';
-import { LoadingContent } from 'lib/components/@layout/LoadingContent';
-import { Paragraph } from 'lib/components/@typography/Paragraph';
-import { Skeleton } from 'lib/components/@layout/Skeleton';
-import { useToggler } from 'lib/hooks';
-import { Toggle } from 'lib/components/@controls/Toggle';
-import { Avatar } from 'lib/components/Avatar';
-import { ROUTE } from 'lib/consts/routes';
-import type { BookReviewsProps, SelectedLanguage } from './interface';
-import { useLangOptions, useReviewsQuery } from './hooks';
-import { ReviewDropdown } from './ReviewDropdown';
+import { useState } from 'react'
+import { formatDate } from 'lib/utils'
+import { Select, ISelect } from 'lib/components/@controls/Select'
+import { LoadingContent } from 'lib/components/@layout/LoadingContent'
+import { Paragraph } from 'lib/components/@typography/Paragraph'
+import { Skeleton } from 'lib/components/@layout/Skeleton'
+import { useToggler } from 'lib/hooks'
+import { Toggle } from 'lib/components/@controls/Toggle'
+import { Avatar } from 'lib/components/Avatar'
+import { ROUTE } from 'lib/consts/routes'
+import type { BookReviewsProps, SelectedLanguage } from './interface'
+import { useLangOptions, useReviewsQuery } from './hooks'
+import { ReviewDropdown } from './ReviewDropdown'
 
 export const BookReviews: React.FC<BookReviewsProps> = props => {
-  const [thisEdition, setThisEdition] = useToggler();
-  const [lang, setLang] = useState<ISelect<SelectedLanguage>['value']>(null);
-  const bookId = props.bookId.toString();
-  const editionId = thisEdition ? props.editionId.toString() : null;
+  const [thisEdition, setThisEdition] = useToggler()
+  const [lang, setLang] = useState<ISelect<SelectedLanguage>['value']>(null)
+  const bookId = props.bookId.toString()
+  const editionId = thisEdition ? props.editionId.toString() : null
   const { reviews, loading, previousData } = useReviewsQuery({
     lang,
     bookId,
     editionId,
-  });
-  const langOptions = useLangOptions({ bookId, editionId });
+  })
+  const langOptions = useLangOptions({ bookId, editionId })
 
   return (
     <div>
@@ -33,8 +33,8 @@ export const BookReviews: React.FC<BookReviewsProps> = props => {
           label="This Edition"
           checked={thisEdition}
           onCheckedChange={() => {
-            setLang(null);
-            setThisEdition();
+            setLang(null)
+            setThisEdition()
           }}
         />
       </div>
@@ -54,7 +54,7 @@ export const BookReviews: React.FC<BookReviewsProps> = props => {
       >
         <div className="grid gap-8 auto-rows-max">
           {reviews.map(review => {
-            const { creator } = review;
+            const { creator } = review
             return (
               <div key={review.id} className="relative grid items-center gap-2 max-w-prose">
                 <Avatar
@@ -72,10 +72,10 @@ export const BookReviews: React.FC<BookReviewsProps> = props => {
                   {review.body}
                 </Paragraph>
               </div>
-            );
+            )
           })}
         </div>
       </LoadingContent>
     </div>
-  );
-};
+  )
+}

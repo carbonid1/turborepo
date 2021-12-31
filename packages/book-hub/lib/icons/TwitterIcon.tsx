@@ -17,7 +17,7 @@ const TwitterIcon: React.FC<JSX.IntrinsicElements['svg']> = props => {
         fillRule="nonzero"
       />
     </svg>
-  );
-};
+  )
+}
 
-export default TwitterIcon;
+export default TwitterIcon

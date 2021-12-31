@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   stories: ['../lib/**/*.stories.@(tsx|mdx)', '../docs/**/*.stories.@(tsx|mdx)'],
@@ -19,4 +19,4 @@ module.exports = {
       },
     },
   }),
-};
+}

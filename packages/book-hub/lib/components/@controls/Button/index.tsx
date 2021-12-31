@@ -1,8 +1,8 @@
-import cn from 'classnames';
+import cn from 'classnames'
 
-type JSXButtonProps = JSX.IntrinsicElements['button'];
+type JSXButtonProps = JSX.IntrinsicElements['button']
 export interface ButtonProps extends JSXButtonProps {
-  loading?: boolean;
+  loading?: boolean
 }
 export const Button: React.FC<ButtonProps> = ({
   className,
@@ -49,5 +49,5 @@ export const Button: React.FC<ButtonProps> = ({
       )}
       <span className={cn(loading && 'opacity-0')}>{children}</span>
     </button>
-  );
-};
+  )
+}

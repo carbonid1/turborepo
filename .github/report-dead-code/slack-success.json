@@ -1,0 +1,31 @@
+{
+	"blocks": [
+		{
+			"type": "header",
+			"text": {
+				"type": "plain_text",
+				"text": "No Dead Code Reported :rocket:",
+				"emoji": true
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "plain_text",
+				"text": ":heart::heart::heart::heart::heart:",
+				"emoji": true
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Open the report",
+					"emoji": true
+				},
+				"value": "open_report",
+				"url": "{{ actions_url }}",
+				"action_id": "button-action"
+			}
+		}
+	]
+}

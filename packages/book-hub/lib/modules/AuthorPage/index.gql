@@ -1,0 +1,16 @@
+query AuthorPageAuthor($id: ID!) {
+  author(id: $id) {
+    id
+    bio
+    fullName
+    imageUrl
+    books {
+      editions {
+        title
+        description
+        id
+      }
+      id
+    }
+  }
+}

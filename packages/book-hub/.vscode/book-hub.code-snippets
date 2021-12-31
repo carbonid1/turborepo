@@ -1,0 +1,32 @@
+{
+	"import classnames": {
+		"prefix": "icn",
+		"body": "import cn from 'classnames';"
+	},
+	"TailwindCSS TS component": {
+		"prefix": "component",
+		"body": [
+			"export interface ${1:Component}Props {",
+			"  className?: string;",
+			"}",
+			"export const ${1:Component}: React.FC<${1:Component}Props> = ({ className }) => {",
+			"  return <div className={className}>${1:Component}</div>",
+			"};"
+		],
+		"description": "Styled component with wildcard export"
+	},
+	"Storybook component": {
+		"prefix": "story",
+		"body": [
+			"import type { Story, Meta } from '@storybook/react';",
+			"import ${1:Component}, { ${1:Component}Props } from '.';",
+			"",
+			"export default { title: '${1:Component}', component: ${1:Component} } as Meta;",
+			"const Template: Story<${1:Component}Props> = props => <${1:Component} {...props} />;",
+			"",
+			"export const Default = Template.bind({});",
+			"Default.args = {};"
+		],
+		"description": "Storybook component"
+	}
+}

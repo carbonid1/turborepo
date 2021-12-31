@@ -1,0 +1,18 @@
+# build
+node_modules
+tsconfig.tsbuildinfo
+public/sw.*
+public/workbox-*
+
+# db
+prisma/dev.db
+
+# local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# deployment
+.vercel

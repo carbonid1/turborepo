@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-text-base: 14, 20, 27;
+    --color-text-complement: 75, 85, 99;
+    --color-text-inverted: 250, 250, 250;
+    --color-placeholder: 156, 163, 175;
+    --color-background-base: 255, 255, 255;
+    --color-background-complement: 255, 255, 255;
+    --color-background-tertiary: 229, 231, 235;
+    --color-border-base: 255, 255, 255;
+    --color-primary: 59, 130, 246;
+    --color-primary-light: 219, 234, 254;
+    --color-primary-dark: 37, 99, 235;
+    --color-background-button-base: 96, 165, 250;
+    --color-skeleton: 147, 197, 253;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-text-base: 250, 250, 250;
+      --color-text-complement: 250, 250, 250;
+      --color-text-inverted: 14, 20, 27;
+      --color-background-base: 14, 20, 27;
+      --color-background-complement: 25, 35, 45;
+      --color-background-tertiary: 25, 35, 45;
+      --color-border-base: 55, 65, 81;
+      --color-primary: 251, 191, 36;
+      --color-primary-light: 129, 119, 83;
+      --color-primary-dark: 245, 158, 11;
+      --color-background-button-base: 252, 211, 77;
+      --color-skeleton: 253, 230, 138;
+    }
+  }
+
+  html,
+  body,
+  #__next {
+    @apply h-full;
+  }
+
+  body {
+    @apply text-skin-base bg-skin-base;
+  }
+
+  #__next {
+    @apply flex flex-col;
+  }
+
+  ul,
+  button {
+    @apply focus:outline-none focus:ring-2 focus:ring-skin-primary;
+  }
+}
+
+@layer utilities {
+  .shadow-underline {
+    @apply transition-shadow duration-500 shadow-md focus:outline-none hover:duration-100 focus:duration-100;
+    box-shadow: 0 0 0 currentColor;
+  }
+  .shadow-underline:focus,
+  .shadow-underline:hover {
+    box-shadow: 0 2px 0 currentColor;
+  }
+
+  /* .absoluty-centered {
+		@apply absolute left-1/2 top-1/2;
+		transform: translate(-50%, -50%);
+	} */
+}

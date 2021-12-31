@@ -1,0 +1,6 @@
+fragment AuthorsFragment on Book {
+  authors {
+    id
+    fullName
+  }
+}

@@ -1,0 +1,19 @@
+query BookReviews($bookId: ID, $editionId: ID, $lang: String) {
+  reviews(lang: $lang, bookId: $bookId, editionId: $editionId) {
+    id
+    body
+    lang
+    createdAt
+    creator {
+      id
+      name
+      image
+    }
+  }
+}
+
+query BookReviewsLanguages($bookId: ID, $editionId: ID) {
+  reviews(bookId: $bookId, editionId: $editionId) {
+    lang
+  }
+}

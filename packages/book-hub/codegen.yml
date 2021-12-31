@@ -1,0 +1,23 @@
+overwrite: true
+schema: 'http://localhost:3000/api'
+documents: './**/*.gql'
+generates:
+  lib/generated/graphql.tsx:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+      - named-operations-object
+config:
+  pureMagicComment: true
+  skipTypename: true
+  identifierName: names
+  omitOperationSuffix: true
+  avoidOptionals:
+    field: false
+    inputValue: false
+    object: false
+    defaultValue: false
+hooks:
+  afterAllFileWrite:
+    - prettier --write

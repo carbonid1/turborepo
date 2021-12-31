@@ -1,0 +1,24 @@
+{
+  "baseDir": "./.next",
+  "files": [
+    {
+      "path": "static/chunks/**/*-<hash>.js"
+    }
+  ],
+  "groups": [
+    {
+      "path": "**/*.css"
+    }
+  ],
+  "reportOutput": [
+    [
+      "github",
+      {
+        "checkRun": false,
+        "commitStatus": true,
+        "prComment": true
+      }
+    ]
+  ],
+  "verbose": true
+}

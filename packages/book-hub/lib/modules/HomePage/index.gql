@@ -1,0 +1,10 @@
+query IndexPageBooks {
+  books {
+    id
+    editions {
+      id
+      title
+      cover
+    }
+  }
+}

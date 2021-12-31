@@ -1,0 +1,17 @@
+query ReviewPageReview($id: ID) {
+  review(id: $id) {
+    body
+    edition {
+      title
+      cover
+      book {
+        ...AuthorsFragment
+      }
+    }
+    creator {
+      id
+      image
+      name
+    }
+  }
+}

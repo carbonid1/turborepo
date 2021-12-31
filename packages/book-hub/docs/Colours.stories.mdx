@@ -1,0 +1,65 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+
+<Meta title="docs/Colour Palette" />
+
+# Colour Palette
+
+<Canvas>
+  <>
+    <div className="py-4 font-bold text-xl">Switch between your OS colour modes to check both</div>
+    <div className="grid gap-x-4 bg-skin-base">
+      <div className="grid grid-x-4 grid-cols-[1fr,250px] h-14">
+        <div style={{ background: 'rgb(var(--color-text-base))' }} />
+        <div className="flex items-center justify-start pl-4">Text Base</div>
+      </div>
+      <div className="grid grid-x-4 grid-cols-[1fr,250px] h-14">
+        <div style={{ background: 'rgb(var(--color-text-complement))' }} />
+        <div className="flex items-center justify-start pl-4">Text Complement</div>
+      </div>
+      <div className="grid grid-x-4 grid-cols-[1fr,250px] h-14">
+        <div style={{ background: 'rgb(var(--color-placeholder))' }} />
+        <div className="flex items-center justify-start pl-4">Placeholder</div>
+      </div>
+      <div className="grid grid-x-4 grid-cols-[1fr,250px] h-14">
+        <div style={{ background: 'rgb(var(--color-background-base))' }} />
+        <div className="flex items-center justify-start pl-4">Background Base</div>
+      </div>
+      <div className="grid grid-x-4 grid-cols-[1fr,250px] h-14">
+        <div style={{ background: 'rgb(var(--color-background))' }} />
+        <div className="flex items-center justify-start pl-4">Background</div>
+      </div>
+      <div className="grid grid-x-4 grid-cols-[1fr,250px] h-14">
+        <div style={{ background: 'rgb(var(--color-background-complement))' }} />
+        <div className="flex items-center justify-start pl-4">Background Complement</div>
+      </div>
+      <div className="grid grid-x-4 grid-cols-[1fr,250px] h-14">
+        <div style={{ background: 'rgb(var(--color-background-tertiary))' }} />
+        <div className="flex items-center justify-start pl-4">Background Tertiary</div>
+      </div>
+      <div className="grid grid-x-4 grid-cols-[1fr,250px] h-14">
+        <div style={{ background: 'rgb(var(--color-border-base))' }} />
+        <div className="flex items-center justify-start pl-4">Border Base</div>
+      </div>
+      <div className="grid grid-x-4 grid-cols-[1fr,250px] h-14">
+        <div style={{ background: 'rgb(var(--color-primary-light))' }} />
+        <div className="flex items-center justify-start pl-4">Primary Light</div>
+      </div>
+      <div className="grid grid-x-4 grid-cols-[1fr,250px] h-14">
+        <div style={{ background: 'rgb(var(--color-primary))' }} />
+        <div className="flex items-center justify-start pl-4">Primary</div>
+      </div>
+      <div className="grid grid-x-4 grid-cols-[1fr,250px] h-14">
+        <div style={{ background: 'rgb(var(--color-primary-dark))' }} />
+        <div className="flex items-center justify-start pl-4">Primary Dark</div>
+      </div>
+      <div className="grid grid-x-4 grid-cols-[1fr,250px] h-14">
+        <div style={{ background: 'rgb(var(--color-background-button-base))' }} />
+        <div className="flex items-center justify-start pl-4">Background Button Base</div>
+      </div>
+      <div className="grid grid-x-4 grid-cols-[1fr,250px] h-14">
+        <div style={{ background: 'rgb(var(--color-skeleton))' }} />
+        <div className="flex items-center justify-start pl-4">Skeleton</div>
+      </div>
+    </div>
+  </>
+</Canvas>

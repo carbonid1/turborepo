@@ -1,0 +1,3 @@
+fragment ByAuthorsFragment on Book {
+  ...AuthorsFragment
+}

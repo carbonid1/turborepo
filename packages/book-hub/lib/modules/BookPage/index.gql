@@ -1,0 +1,5 @@
+query BookPageEdition($id: ID) {
+  edition(id: $id) {
+    ...EditionFragment
+  }
+}

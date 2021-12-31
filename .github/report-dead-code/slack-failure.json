@@ -1,0 +1,36 @@
+{
+	"blocks": [
+		{
+			"type": "header",
+			"text": {
+				"type": "plain_text",
+				"text": "Dead Code Reported :broken_heart:"
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "plain_text",
+				"text": ":shit::shit::shit::shit::shit:"
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Don't panic! You might wanna check out the report, remove the dead code and submit a PR. If the code would be used soon or is an exeption you should add an ESLint ignore comment. Good Luck."
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Open the report",
+					"emoji": true
+				},
+				"value": "open_report",
+				"url": "{{ actions_url }}",
+				"action_id": "button-action"
+			}
+		}
+	]
+}

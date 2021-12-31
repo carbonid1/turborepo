@@ -1,0 +1,32 @@
+changelog:
+  exclude:
+    labels:
+      - Ignore For Release
+  categories:
+    - title: Exciting New Features 🎉
+      labels:
+        - Feature
+    - title: 🐛 Fixes
+      labels:
+        - Fix
+    - title: Continuous Integration 🧪
+      labels:
+        - CI
+    - title: Tests 🚨
+      labels:
+        - Tests
+    - title: Docs 📚
+      labels:
+        - Documentation
+    - title: Refactoring 🔨
+      labels:
+        - Refactoring
+    - title: Performance Improvements 🚀
+      labels:
+        - Performance Improvements
+    - title: Build Update 👷
+      labels:
+        - Build
+    - title: Other Updates
+      labels:
+        - Chore

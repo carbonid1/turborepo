@@ -1,0 +1,14 @@
+query EditionsPageBook($id: ID) {
+  book(id: $id) {
+    ...ByAuthorsFragment
+    editions {
+      id
+      lang
+      title
+      cover
+      description
+      publishedIn
+    }
+    publishedIn
+  }
+}

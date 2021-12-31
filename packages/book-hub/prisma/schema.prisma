@@ -1,0 +1,97 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+  oauth_token_secret String?
+  oauth_token        String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Author {
+  books     Book[]
+  fullName  String   @db.VarChar(255)
+  id        Int      @id @default(autoincrement())
+  updatedAt DateTime @updatedAt
+  imageUrl  String?
+  bio       String?
+}
+
+model Book {
+  authors     Author[]
+  editions    Edition[]
+  id          Int       @id @default(autoincrement())
+  publishedIn DateTime?
+}
+
+model Edition {
+  id          Int       @id @default(autoincrement())
+  updatedAt   DateTime  @updatedAt
+  book        Book      @relation(fields: [bookId], references: [id])
+  bookId      Int
+  cover       String?
+  description String?
+  lang        String?
+  publishedIn DateTime?
+  reviews     Review[]
+  title       String    @db.VarChar(255)
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  body      String
+  edition   Edition  @relation(fields: [editionId], references: [id])
+  editionId Int
+  lang      String?
+  creator   User     @relation(fields: [creatorId], references: [id])
+  creatorId String
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  reviews       Review[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}

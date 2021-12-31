@@ -1,0 +1,12 @@
+{
+  "name": "BookHub GraphQL Schema",
+  "schemaPath": "pages/api/schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Localhost": {
+        "introspect": true,
+        "url": "http://localhost:3000/api"
+      }
+    }
+  }
+}
